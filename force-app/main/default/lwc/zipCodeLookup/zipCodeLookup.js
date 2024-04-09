@@ -16,7 +16,7 @@ export default class ZipCodeLookup extends LightningElement {
         if(data){
           //  data.forEach(i => {
                 this.options = data.map(d => {
-                    return { this.city: d, this.value: d };
+                    return { label: d, value: d };
                   });
           //  });
             console.log('opts'+JSON.stringify(this.options));
@@ -40,8 +40,8 @@ export default class ZipCodeLookup extends LightningElement {
             });
     };
     handleChange(event) {
-    this.value = event.detail.value;
-    this.value = event.detail.value;
+    this.city = event.detail.value;
+     this.state = event.detail.value;
     console.log('selected'+this.value);
   }
 }
