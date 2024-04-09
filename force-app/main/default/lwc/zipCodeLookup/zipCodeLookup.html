@@ -1,0 +1,35 @@
+<!--
+@description       : 
+@author            : Luis Arturo Parra Rosas
+@group             : 
+@last modified on  : 04-09-2024
+-->
+<template>
+    <lightning-card class title="Zip Code Lookup">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span>
+                    <lightning-input class="slds-m-left_small" label="Please enter Zip code" value={zipCode}
+                        onchange={getImputValue}>
+
+                    </lightning-input>
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+
+                    <lightning-combobox class="slds-m-right_small" name="Country" label="Country" value={value} 
+                    options={options}  onchange={handleChange}  >
+                </lightning-combobox>
+                </span>
+            </div>
+
+        </div>
+        <lightning-button class="slds-align_absolute-center" label="Search"
+            onclick={handleZipCodeQuery}></lightning-button>
+        <div class="slds-m-left_small" if:true={showResult}>
+            <p>City: {city}</p>
+            <p>State: {state}</p>
+        </div>
+    </lightning-card>
+</template>
